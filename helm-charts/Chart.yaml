@@ -1,0 +1,9 @@
+#The Chart.yaml file contains a description of the chart. You can access it from within a template.
+
+#Chart API version 2 is the current API version that was introduced in Helm 3. This is the default API version used when new charts are created using helm create.
+
+#the version below refers to chart(Avinash) version
+
+apiVersion: v2
+name: roboshop
+version: 1.2.3
