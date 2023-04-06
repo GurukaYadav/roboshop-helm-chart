@@ -8,5 +8,5 @@ spec:
     app: {{ .Values.appName }}
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: {{ .Values.service.targetPort }}
+      port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.port }}
