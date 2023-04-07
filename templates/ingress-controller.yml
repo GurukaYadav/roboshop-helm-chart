@@ -15,10 +15,10 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: frontend
+                name: {{ .Values.appName }}
                 port:
-                  number: 80
+                  number: {{ .Values.service.port }}
 {{- end -}}
 
-#here we are using if condition present in hel charts.
+#here we are using if condition present in helm charts.
 # For ingress to create, we need to enable it and if the ingress needs to be created based on the enable, we use this condition.
