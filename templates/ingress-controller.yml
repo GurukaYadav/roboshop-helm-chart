@@ -11,14 +11,14 @@ spec:
   rules:
     - http:
         paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: {{ .Values.appName }}
-                port:
-                  number: {{ .Values.service.port }}
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: {{ .Values.appName }}
+              port:
+                number: {{ .Values.service.port }}
 {{- end -}}
 
 #here we are using if condition present in helm charts.
-# For ingress to create, we need to enable it and if the ingress needs to be created based on the enable, we use this condition.
+# For ingress to create, we need to enable it and if the ingress needs to be created based on the enabled, we use this condition.
