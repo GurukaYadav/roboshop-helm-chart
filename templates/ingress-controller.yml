@@ -1,24 +1,24 @@
-#{{- if .Values.ingress.enabled -}}
-#kind: Ingress
-#apiVersion: networking.k8s.io/v1
-#metadata:
-#  name: ingress
-#  annotations:
-#    alb.ingress.kubernetes.io/scheme: {{ .Values.ingress.scheme }}
-#    alb.ingress.kubernetes.io/target-type: ip
-#spec:
-#  ingressClassName: alb
-#  rules:
-#    - http:
-#        paths:
-#        - path: /
-#          pathType: Prefix
-#          backend:
-#            service:
-#              name: {{ .Values.appName }}
-#              port:
-#                number: {{ .Values.service.port }}
-#{{- end -}}
+{{- if .Values.ingress.enabled -}}
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: ingress
+  annotations:
+    alb.ingress.kubernetes.io/scheme: {{ .Values.ingress.scheme }}
+    alb.ingress.kubernetes.io/target-type: ip
+spec:
+  ingressClassName: alb
+  rules:
+    - http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: {{ .Values.appName }}
+              port:
+                number: {{ .Values.service.port }}
+{{- end -}}
 
 #here we are using if condition present in helm charts.
 # For ingress to create, we need to enable it and if the ingress needs to be created based on the enabled, we use this condition.
