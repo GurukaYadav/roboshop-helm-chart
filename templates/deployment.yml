@@ -16,6 +16,7 @@ spec:
     metadata:
       labels:
         app: {{ .Values.appName }}
+        ephoc: "date +%s"
     spec:
       containers:
         - name: {{ .Values.appName }}
