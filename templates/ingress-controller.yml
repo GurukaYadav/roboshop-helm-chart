@@ -21,7 +21,3 @@ spec:
 {{- end -}}
 
 
-
-
-#here we are using if condition present in helm charts.
-# For ingress to create, we need to enable it and if the ingress needs to be created based on the enabled, we use this condition.
