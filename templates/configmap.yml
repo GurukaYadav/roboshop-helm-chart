@@ -1,5 +1,3 @@
-# If you want to print yaml blocks(helm.yaml file in components) anywhere in  kuberenets manifest file in the helm charts we use a function called "toYaml"
-
 {{- if .Values.configMap.enabled -}}
 apiVersion: v1
 kind: ConfigMap
