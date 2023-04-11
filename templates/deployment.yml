@@ -22,3 +22,6 @@ spec:
         - name: {{ .Values.appName }}
           image: 124374336606.dkr.ecr.us-east-1.amazonaws.com/{{ .Values.appName }}
           imagePullPolicy: Always
+          envFrom:
+            - configMapRef:
+                name: {{ .Values.appName }}
