@@ -39,6 +39,7 @@ spec:
 #            limits:
 #              memory: {{ .Values.resources.limits.memory }}
 #              cpu: {{ .Values.resources.limits.cpu }}
+          {{- if .Values.probes.enabled }}
           livenessProbe:
             httpGet:
               path: {{ .Values.probes.endpoint }}
@@ -51,6 +52,7 @@ spec:
               port: {{ .Values.probes.port }}
             initialDelaySeconds: {{ .Values.probes.readiness.initialDelaySeconds }}
             periodSeconds: {{ .Values.probes.readiness.periodSeconds }}
+          {{- end }}
 
 
 #in probes since we are using the same path and container port for livenss and readiness checks, we are making the code dry
