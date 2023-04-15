@@ -45,14 +45,13 @@ spec:
               port: {{ .Values.probes.port }}
             initialDelaySeconds: {{ .Values.probes.liveness.initialDelaySeconds }}
             periodSeconds: {{ .Values.probes.liveness.timeoutSeconds }}
-            timeoutSeconds: {{ .Values.probes.liveness.timeoutSeconds }}
           readinessProbe:
             httpGet:
               path: {{ .Values.probes.endpoint }}
               port: {{ .Values.probes.port }}
             initialDelaySeconds: {{ .Values.probes.readiness.initialDelaySeconds }}
             periodSeconds: {{ .Values.probes.readiness.periodSeconds }}
-            timeoutSeconds: {{ .Values.probes.readiness.timeoutSeconds }}
+
 
 #in probes since we are using the same path and container port for livenss and readiness checks, we are making the code dry
 #"end Point" is a kubernetes resource used to tarck the ip addresses of the pods which are dynamically assigned to it based on pod labels.
