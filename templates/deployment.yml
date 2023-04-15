@@ -45,7 +45,7 @@ spec:
               port: {{ .Values.probes.port }}
             initialDelaySeconds: {{ .Values.probes.liveness.initialDelaySeconds }}
             periodSeconds: {{ .Values.probes.liveness.timeoutSeconds }}
-            timeoutSeconds:
+            timeoutSeconds: {{ .Values.probes.liveness.timeoutSeconds }}
           readinessProbe:
             httpGet:
               path: {{ .Values.probes.endpoint }}
