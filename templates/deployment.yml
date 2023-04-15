@@ -49,4 +49,4 @@ spec:
             initialDelaySeconds: {{ .Values.probes.readiness.initialDelaySeconds }}
             periodSeconds: {{ .Values.probes.readiness.periodSeconds }}
 
-//in probes since we are using the same path and container port for livenss and readiness checks, we are making the code dry
+#in probes since we are using the same path and container port for livenss and readiness checks, we are making the code dry
