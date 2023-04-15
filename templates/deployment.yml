@@ -25,10 +25,13 @@ spec:
           envFrom:
           - configMapRef:
               name: {{ .Values.appName }}
+          {{- if .Values.externalSecret.enabled }}
           - secretRef:
               name: {{ .Values.appName }}
+          {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+#the above "resources" can also be written as below
 #          resources:
 #            requests:
 #              memory: {{ .Values.resources.requests.memory }}
