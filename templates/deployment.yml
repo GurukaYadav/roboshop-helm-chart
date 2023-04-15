@@ -41,13 +41,13 @@ spec:
 #              cpu: {{ .Values.resources.limits.cpu }}
           livenessProbe:
             httpGet:
-              path: {{ .Values.probes.path }}
+              path: {{ .Values.probes.endpoint }}
               port: {{ .Values.probes.port }}
             initialDelaySeconds: {{ .Values.probes.liveness.initialDelaySeconds }}
             periodSeconds: {{ .Values.probes.liveness.periodSeconds }}
           readinessProbe:
             httpGet:
-              path: {{ .Values.probes.path }}
+              path: {{ .Values.probes.endpoint }}
               port: {{ .Values.probes.port }}
             initialDelaySeconds: {{ .Values.probes.readiness.initialDelaySeconds }}
             periodSeconds: {{ .Values.probes.readiness.periodSeconds }}
